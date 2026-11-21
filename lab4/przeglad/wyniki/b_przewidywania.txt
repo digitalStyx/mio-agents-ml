@@ -1,0 +1,2 @@
+wierszy 60, max |p_csv - p_model| = 4.80e-07, zle etykiety [], zle pred []
+prog 0.5096, najwyzszy ham p=0.4474, najnizszy spam p=0.4562

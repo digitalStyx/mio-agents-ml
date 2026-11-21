@@ -1,0 +1,38 @@
+## model (models/spam_model.json)
+model: TAK  logreg
+param: TAK  1.0
+threshold: TAK  0.5095672028531834
+drop_tokens: TAK  ['wrote', 'subj_re', 'date']
+cleaning_version: TAK  2
+train_sha256: TAK  c5d3e91e9ba758b8499bc825b34ce1f8f8392c31cb7205b3e3f3f122f51444e5
+versions: TAK  {'python': '3.13.17', 'scikit-learn': '1.9.1', 'numpy': '2.5.5', 'scipy': '1.18.1', 'joblib': '1.6.0'}
+cv: TAK  {'tp': 55, 'fp': 1, 'n_spam': 60, 'n_ham': 120}
+vocabulary bit w bit identyczne: TAK
+idf bit w bit identyczne: TAK
+coef bit w bit identyczne: TAK
+intercept bit w bit identyczne: TAK
+joblib bajtowo identyczny: TAK
+
+## walidacja krzyzowa (results/cv_report.json, bez daty utworzenia)
+baselines: TAK
+grid: TAK
+conversation_check: TAK
+chosen: TAK
+trace_check: TAK
+stability: TAK
+
+## przewidywania (results/validation_predictions.csv)
+te same id: TAK (60)
+label: rozne w 0 wierszach
+p_spam: rozne w 0 wierszach
+pred: rozne w 0 wierszach
+campaign_copy: rozne w 0 wierszach
+
+## miary (results/validation_report.json)
+full: TAK
+without_copies: TAK
+copies_excluded: TAK
+thread_hams: TAK
+thread_hams_fp: TAK
+same_sender_spams: TAK
+same_sender_detected: TAK

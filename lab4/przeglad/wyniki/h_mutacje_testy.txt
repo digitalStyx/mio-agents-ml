@@ -1,0 +1,24 @@
+## m1_przesuniecie
+OK
+## m2_bez_grup
+OK
+## Pełna walidacja (60 wiadomości)
+
+| | przewidziany spam | przewidziany ham |
+|---|---|---|
+| spam | 20 | 0 |
+## m3_uczy_na_val
+FAILED (failures=1)
+## m1: sprawdzenie, ze przesuniecie zmienilo wynik
+## Pełna walidacja (60 wiadomości)
+
+| | przewidziany spam | przewidziany ham |
+|---|---|---|
+| spam | 7 | 13 |
+## m3: ktory test padl
+FAIL: test_measures_for_60_and_54 (tests.test_outputs.TestValidationOutputs.test_measures_for_60_and_54)
+AssertionError: 0.9999999999999998 not greater than or equal to 1.0
+FAILED (failures=1)
+wilson(n,n) gorna granica < 1.0 dla n w 1..200: [4, 9, 21, 23, 33, 38, 40, 44, 46, 48, 51, 52, 55, 60, 62, 63, 77, 79, 84, 85, 86, 87, 88, 89, 94, 98, 104, 108, 115, 123] razem 59
+20/20 -> (0.8388748419471808, 1.0)  19/19 -> (0.831820775947384, 1.0)  13/13 -> (0.7719046276458017, 1.0)
+wilson(0,n) dolna > 0: 36

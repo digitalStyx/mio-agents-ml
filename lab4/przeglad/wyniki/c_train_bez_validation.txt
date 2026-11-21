@@ -1,0 +1,8 @@
+train bez data/validation.csv: OK, model zapisany
+threshold True 0.5095672028531834
+param True 1.0
+drop_tokens True ['wrote', 'subj_re', 'date']
+cleaning_version True 2
+train_sha256 True c5d3e91e9ba758b8499bc825b34ce1f8f8392c31cb7205b3e3f3f122f51444e5
+vocabulary identyczny: True
+coef identyczne: True  intercept: True

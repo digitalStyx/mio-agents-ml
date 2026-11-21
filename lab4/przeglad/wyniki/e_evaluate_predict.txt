@@ -1,0 +1,11 @@
+## evaluate z istniejaca blokada
+Ocena na validation już się odbyła (2026-11-21T18:23:38+00:00). Plan: tylko raz.
+kod wyjscia 1
+## evaluate po usunieciu blokady
+kod 0
+przewidywania identyczne (id, etykieta, pred, kopia)
+miary 60 i 54 identyczne: True
+## przyklad z README
+{"p_spam": 0.6772, "threshold": 0.5095672028531834, "label": "spam"}
+48:# {"p_spam": 0.6772, "threshold": 0.4694748425776396, "label": "spam"}
+48:# {"p_spam": 0.6772, "threshold": 0.4694748425776396, "label": "spam"}

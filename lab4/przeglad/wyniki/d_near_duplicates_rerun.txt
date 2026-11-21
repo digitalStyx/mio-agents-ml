@@ -1,0 +1,6 @@
+par: stare 48 nowe 48
+decyzje stare Counter({'copy': 22, 'same_sender': 20, 'thread': 5, 'different': 1})
+decyzje nowe Counter({'copy': 22, 'same_sender': 20, 'thread': 5, 'different': 1})
+zgubione pary (byly, nie ma): []
+nowe pary bez decyzji: []
+zmienione decyzje: []

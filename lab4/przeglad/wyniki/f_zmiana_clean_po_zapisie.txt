@@ -1,0 +1,13 @@
+## evaluate po zmianie clean.py (model z pliku bez zmian)
+kod 0
+wiadomosci ze zmienionym p_spam: 6
+   ('51a14bcfee16b7c1', 'ham', '0.312808', '0.321907', 'ham', 'ham')
+   ('a023b75ed00be9e1', 'ham', '0.350195', '0.349790', 'ham', 'ham')
+   ('567d14f25684cee2', 'ham', '0.338930', '0.338643', 'ham', 'ham')
+   ('cfcfe731b5b31881', 'ham', '0.353178', '0.329477', 'ham', 'ham')
+   ('da1c610cc4ff7c5d', 'ham', '0.321920', '0.294131', 'ham', 'ham')
+   ('fa79f93147db2625', 'ham', '0.375573', '0.371954', 'ham', 'ham')
+## testy
+Ran 26 tests in 1.293s
+
+OK
