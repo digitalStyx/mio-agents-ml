@@ -1,0 +1,73 @@
+# Konfiguracja prototypu klasyfikatora spamu (zob. plan.md).
+# Wartości, których plan nie określał, ustalono przy implementacji; komentarz przy każdej.
+
+seed = 2026                       # to samo ziarno co przy podziale danych
+
+[paths]
+train = "data/train.csv"
+validation = "data/validation.csv"
+manifest = "data/manifest.json"
+near_duplicates = "results/near_duplicates.json"   # pary kopii (krok 3), zatwierdzane ręcznie
+models = "models"
+results = "results"
+
+[cleaning]
+version = "2"                     # podbijać przy każdej zmianie reguł w src/clean.py (v2: nagłówki RSS)
+anon_token = "anonaddr"           # zastępuje zanonimizowane adresy (zzzz@spamassassin.taint.org itd.)
+
+[features]
+subject_prefix = "subj_"          # słowa z tematu zastępowane wersją z prefiksem (nie dublowane)
+token_pattern = "[a-z][a-z0-9]*(?:'[a-z]+)?|\\$"   # słowa od litery, ze skrótami; "$" jako osobny token; same liczby pomijane
+lowercase = true
+min_df = 2
+sublinear_tf = true               # log(1+tf): powtórzenia jednego słowa nie dominują
+norm = "l2"
+
+[near_duplicates]
+shingle_size = 5                  # pięciowyrazowe fragmenty
+review_threshold = 0.2            # pary o podobieństwie Jaccarda >= 0.2 trafiają do ręcznego przeglądu
+cosine_review_threshold = 0.6     # dodatkowo pary o kosinusie TF-IDF >= 0.6 (łapie kopie z przestawionym tekstem)
+group_labels = ["spam"]           # zgodnie z planem grupuje się tylko kopie spamu; wątki hamu zostają
+cv_group_decisions = ["copy", "same_sender"]   # grupy w CV: ostrożniej, łączy też tego samego nadawcę
+validation_exclude_decisions = ["copy"]        # wynik "bez kopii" (plan: 6 kopii); DO POTWIERDZENIA
+
+[cv]
+n_splits = 5
+shuffle = true
+stability_seeds = [2026, 2027, 2028, 2029, 2030]   # rozrzut progu przy innych podziałach (niewiadoma z planu)
+
+[logreg]
+C_grid = [0.01, 0.03, 0.1, 0.3, 1.0, 3.0, 10.0, 30.0, 100.0]
+class_weight = "balanced"         # 2:1 ham:spam; wyrównanie wag przesuwa granicę, próg i tak dobierany osobno
+max_iter = 5000
+solver = "liblinear"
+
+[naive_bayes]
+alpha_grid = [0.01, 0.03, 0.1, 0.3, 1.0]   # MultinomialNB na zliczeniach (CountVectorizer, ten sam analizator)
+
+[threshold]
+max_false_positives = 1           # co najwyżej 1 fałszywy alarm na 120 hamów w predykcjach out-of-fold
+# najniższy taki próg = najwyższa czułość; wartość w połowie odstępu nad 2. najwyższym hamem (src/models.py)
+# ODSTĘPSTWO od planu (decyzja użytkownika po CV): próg z ziarna głównego przy innych ziarnach dawał 2 FP,
+# więc zamraża się najwyższy z progów wyznaczonych tą regułą dla ziaren z [cv].stability_seeds.
+aggregate = "max_over_seeds"      # "main_seed" = reguła z planu bez zmian
+
+[selection]
+# "Przy podobnym wyniku wybierana jest regresja": różnica < min_gain spamów wykrytych w CV (z 60)
+min_gain = 2
+# Remis przy wyborze C/alpha: mniej fałszywych alarmów, potem mniejsza złożoność (mniejsze C / większe alpha)
+# "Regresja wyraźnie lepsza od reguły słów": co najmniej min_gain spamów więcej w CV
+
+[keyword_baseline]
+list_sizes = [10, 20, 30, 50]     # rozmiar listy słów dobierany w CV
+min_spam_docs = 3                 # słowo musi wystąpić w >= 3 spamach train
+# słowa sortowane wg (df_spam + 1)/(n_spam + 2) - (df_ham + 1)/(n_ham + 2), liczone tylko na części uczącej
+
+[trace_check]
+top_n = 30
+corpus_traces = ["listinfo", "mailman", "ilug", "listmaster", "zzzz", "taint", "sourceforge", "newsisfree"]
+conversation_words = ["wrote", "subj_re", "date"]
+max_loss_without = 1              # bez słów rozmowy wynik gorszy najwyżej o 1 mail -> wersja bez nich
+
+[report]
+ci_level = 0.95                   # przedziały Wilsona (własna implementacja, bez statsmodels)

@@ -1,0 +1,884 @@
+{
+ "train_sha256": "c5d3e91e9ba758b8499bc825b34ce1f8f8392c31cb7205b3e3f3f122f51444e5",
+ "cleaning_version": "2",
+ "method": "Jaccard 5-wyrazowych fragmentów >= 0.2 lub kosinus TF-IDF >= 0.6 lub (para spamów) wspólny charakterystyczny host/ścieżka/adres; decyzje ręczne",
+ "decision_values": {
+  "copy": "kopia/wariant tej samej wiadomości lub kampanii",
+  "same_sender": "ten sam nadawca/operacja (szablon, link wypisania), inna oferta",
+  "thread": "ten sam wątek lub źródło, różna treść (ham)",
+  "different": "podobieństwo przypadkowe/szablonowe"
+ },
+ "pairs": [
+  {
+   "kind": "train-train",
+   "a": "9dab509f223b2513",
+   "a_label": "spam",
+   "b": "384c067df3284195",
+   "b_label": "spam",
+   "jaccard_5": 0.939,
+   "cosine_tfidf": 0.993,
+   "shared_urls": [
+    "61.151.247.39/erik/",
+    "61.151.247.39/erik/remove.asp"
+   ],
+   "shared_link_keys": [
+    "host:61.151.247.39"
+   ],
+   "a_subject": "Subject: [ILUG] Re: This is NO JOKE! Speed up your CPU for under $30!",
+   "b_subject": "Subject: Re: Super CHARGE your desktop or laptop today!     17639",
+   "decision": "copy",
+   "note": "ten sam tekst, inny temat"
+  },
+  {
+   "kind": "train-train",
+   "a": "91b37038b2ed2b60",
+   "a_label": "spam",
+   "b": "3b72fc89f045b050",
+   "b_label": "spam",
+   "jaccard_5": 0.97,
+   "cosine_tfidf": 0.991,
+   "shared_urls": [
+    "80.71.66.8/celebst/?aid=993751",
+    "80.71.66.8/farm/?aid=993751",
+    "80.71.66.8/lesbian/?aid=993751",
+    "80.71.66.8/optout/index.html",
+    "80.71.66.8/play/?aid=993751"
+   ],
+   "shared_link_keys": [
+    "host:80.71.66.8",
+    "seg:celebst",
+    "seg:lesbian"
+   ],
+   "a_subject": "Subject: Re: Your VIP Pass",
+   "b_subject": "Subject: Re: Here is your Free Access",
+   "decision": "copy",
+   "note": "kampania \"darmowe członkostwo adult\": ten sam szablon, FAQ, hasło/login"
+  },
+  {
+   "kind": "train-train",
+   "a": "df3b67e11dfbf53c",
+   "a_label": "spam",
+   "b": "885f0773c263e57b",
+   "b_label": "spam",
+   "jaccard_5": 0.859,
+   "cosine_tfidf": 0.977,
+   "shared_urls": [
+    "www.centralremovalservice.com/cgi-bin/poker-remove.cgi",
+    "www.multiplayerpoker.net"
+   ],
+   "shared_link_keys": [
+    "host:www.centralremovalservice.com",
+    "host:www.multiplayerpoker.net"
+   ],
+   "a_subject": "Subject: [ILUG] Want to play poker with other people online.",
+   "b_subject": "Subject: [ILUG-Social] Poker for money againts real players",
+   "decision": "copy",
+   "note": "ta sama reklama pokera"
+  },
+  {
+   "kind": "train-train",
+   "a": "5d68e15980b474ac",
+   "a_label": "spam",
+   "b": "6aefbd0a04c67923",
+   "b_label": "spam",
+   "jaccard_5": 0.9,
+   "cosine_tfidf": 0.967,
+   "shared_urls": [
+    "202.101.163.34:81/li/wangxd/"
+   ],
+   "shared_link_keys": [
+    "host:202.101.163.34",
+    "host:64.123.160.91",
+    "seg:wangxd"
+   ],
+   "a_subject": "Subject: zzzz,All New! Breast Enhancement",
+   "b_subject": "Subject: zzzz,Increase your breast size. 100% safe!",
+   "decision": "copy",
+   "note": "ta sama reklama powiększania piersi, te same hosty"
+  },
+  {
+   "kind": "train-train",
+   "a": "6aefbd0a04c67923",
+   "a_label": "spam",
+   "b": "c7a4390cb674606c",
+   "b_label": "spam",
+   "jaccard_5": 0.876,
+   "cosine_tfidf": 0.951,
+   "shared_urls": [
+    "202.101.163.34:81/li/wangxd/"
+   ],
+   "shared_link_keys": [
+    "host:202.101.163.34",
+    "host:64.123.160.91",
+    "seg:wangxd"
+   ],
+   "a_subject": "Subject: zzzz,Increase your breast size. 100% safe!",
+   "b_subject": "Subject: [ILUG] ilug,Bigger, Fuller Breasts Naturally In Just Weeks",
+   "decision": "copy",
+   "note": "ta sama reklama powiększania piersi, te same hosty"
+  },
+  {
+   "kind": "train-train",
+   "a": "5d68e15980b474ac",
+   "a_label": "spam",
+   "b": "c7a4390cb674606c",
+   "b_label": "spam",
+   "jaccard_5": 0.884,
+   "cosine_tfidf": 0.948,
+   "shared_urls": [
+    "202.101.163.34:81/li/wangxd/"
+   ],
+   "shared_link_keys": [
+    "host:202.101.163.34",
+    "host:64.123.160.91",
+    "seg:wangxd"
+   ],
+   "a_subject": "Subject: zzzz,All New! Breast Enhancement",
+   "b_subject": "Subject: [ILUG] ilug,Bigger, Fuller Breasts Naturally In Just Weeks",
+   "decision": "copy",
+   "note": "ta sama reklama powiększania piersi, te same hosty"
+  },
+  {
+   "kind": "train-train",
+   "a": "538709913c367d14",
+   "a_label": "spam",
+   "b": "ff30b5937f313b80",
+   "b_label": "spam",
+   "jaccard_5": 0.818,
+   "cosine_tfidf": 0.946,
+   "shared_urls": [
+    "www.centralremovalservice.com/cgi-bin/domain-remove.cgi",
+    "www.domainsforeveryone.com/"
+   ],
+   "shared_link_keys": [
+    "host:www.centralremovalservice.com",
+    "host:www.domainsforeveryone.com"
+   ],
+   "a_subject": "Subject: [ILUG] re: popular .BIZ and .COM extensions for only $14.95",
+   "b_subject": "Subject: $14.95 per year domain names",
+   "decision": "copy",
+   "note": "domeny za $14.95, ten sam tekst"
+  },
+  {
+   "kind": "train-train",
+   "a": "538709913c367d14",
+   "a_label": "spam",
+   "b": "7d7bd4edce7d8c3f",
+   "b_label": "spam",
+   "jaccard_5": 0.671,
+   "cosine_tfidf": 0.937,
+   "shared_urls": [
+    "www.centralremovalservice.com/cgi-bin/domain-remove.cgi"
+   ],
+   "shared_link_keys": [
+    "host:www.centralremovalservice.com"
+   ],
+   "a_subject": "Subject: [ILUG] re: popular .BIZ and .COM extensions for only $14.95",
+   "b_subject": "Subject: $14.95 per year for .COM, .BIZ, and .INFO extensions",
+   "decision": "copy",
+   "note": "domeny za $14.95, ten sam tekst"
+  },
+  {
+   "kind": "train-train",
+   "a": "7d7bd4edce7d8c3f",
+   "a_label": "spam",
+   "b": "ff30b5937f313b80",
+   "b_label": "spam",
+   "jaccard_5": 0.7,
+   "cosine_tfidf": 0.924,
+   "shared_urls": [
+    "www.centralremovalservice.com/cgi-bin/domain-remove.cgi"
+   ],
+   "shared_link_keys": [
+    "host:www.centralremovalservice.com"
+   ],
+   "a_subject": "Subject: $14.95 per year for .COM, .BIZ, and .INFO extensions",
+   "b_subject": "Subject: $14.95 per year domain names",
+   "decision": "copy",
+   "note": "domeny za $14.95, ten sam tekst"
+  },
+  {
+   "kind": "train-train",
+   "a": "5ca18f579faec0e3",
+   "a_label": "spam",
+   "b": "49b0a7de89983d47",
+   "b_label": "spam",
+   "jaccard_5": 0.524,
+   "cosine_tfidf": 0.89,
+   "shared_urls": [
+    "greenzer.com/remove.php",
+    "www.bozombo.com/filthyteensluts/index.php?affid=1534",
+    "www.bozombo.com/luckyamateurwives/index.php?affid=1534"
+   ],
+   "shared_link_keys": [
+    "host:greenzer.com",
+    "host:www.bozombo.com",
+    "seg:filthyteensluts",
+    "seg:luckyamateurwives"
+   ],
+   "a_subject": "Subject: Account zzzz@spamassassin.taint.org",
+   "b_subject": "Subject: Fw: Re: Account For Cum Shots To: zzzz@spamassassin.taint.org OfferID: qxjx",
+   "decision": "copy",
+   "note": "kampania \"darmowe członkostwo adult\": ten sam szablon, FAQ, hasło/login"
+  },
+  {
+   "kind": "train-train",
+   "a": "dd1a9d4a8ab7afdb",
+   "a_label": "spam",
+   "b": "91b37038b2ed2b60",
+   "b_label": "spam",
+   "jaccard_5": 0.338,
+   "cosine_tfidf": 0.814,
+   "shared_urls": [],
+   "shared_link_keys": [],
+   "a_subject": "Subject: Re: zzzz@spamassassin.taint.org",
+   "b_subject": "Subject: Re: Your VIP Pass",
+   "decision": "copy",
+   "note": "kampania \"darmowe członkostwo adult\": ten sam szablon, FAQ, hasło/login"
+  },
+  {
+   "kind": "train-train",
+   "a": "dd1a9d4a8ab7afdb",
+   "a_label": "spam",
+   "b": "3b72fc89f045b050",
+   "b_label": "spam",
+   "jaccard_5": 0.337,
+   "cosine_tfidf": 0.807,
+   "shared_urls": [],
+   "shared_link_keys": [],
+   "a_subject": "Subject: Re: zzzz@spamassassin.taint.org",
+   "b_subject": "Subject: Re: Here is your Free Access",
+   "decision": "copy",
+   "note": "kampania \"darmowe członkostwo adult\": ten sam szablon, FAQ, hasło/login"
+  },
+  {
+   "kind": "train-train",
+   "a": "bac28e58c42fa5f6",
+   "a_label": "ham",
+   "b": "252c7bb468df4ea5",
+   "b_label": "ham",
+   "jaccard_5": 0.345,
+   "cosine_tfidf": 0.788,
+   "shared_urls": [],
+   "shared_link_keys": [],
+   "a_subject": "Subject: [Spambayes] can't write to CVS...",
+   "b_subject": "Subject: [Spambayes] can't write to CVS...",
+   "decision": "thread",
+   "note": "ten sam wątek dyskusji"
+  },
+  {
+   "kind": "train-train",
+   "a": "5ca18f579faec0e3",
+   "a_label": "spam",
+   "b": "dd1a9d4a8ab7afdb",
+   "b_label": "spam",
+   "jaccard_5": 0.342,
+   "cosine_tfidf": 0.648,
+   "shared_urls": [],
+   "shared_link_keys": [],
+   "a_subject": "Subject: Account zzzz@spamassassin.taint.org",
+   "b_subject": "Subject: Re: zzzz@spamassassin.taint.org",
+   "decision": "copy",
+   "note": "kampania \"darmowe członkostwo adult\": ten sam szablon, FAQ, hasło/login"
+  },
+  {
+   "kind": "train-train",
+   "a": "5ca18f579faec0e3",
+   "a_label": "spam",
+   "b": "91b37038b2ed2b60",
+   "b_label": "spam",
+   "jaccard_5": 0.176,
+   "cosine_tfidf": 0.618,
+   "shared_urls": [],
+   "shared_link_keys": [],
+   "a_subject": "Subject: Account zzzz@spamassassin.taint.org",
+   "b_subject": "Subject: Re: Your VIP Pass",
+   "decision": "copy",
+   "note": "kampania \"darmowe członkostwo adult\": ten sam szablon, FAQ, hasło/login"
+  },
+  {
+   "kind": "train-train",
+   "a": "5ca18f579faec0e3",
+   "a_label": "spam",
+   "b": "3b72fc89f045b050",
+   "b_label": "spam",
+   "jaccard_5": 0.176,
+   "cosine_tfidf": 0.612,
+   "shared_urls": [],
+   "shared_link_keys": [],
+   "a_subject": "Subject: Account zzzz@spamassassin.taint.org",
+   "b_subject": "Subject: Re: Here is your Free Access",
+   "decision": "copy",
+   "note": "kampania \"darmowe członkostwo adult\": ten sam szablon, FAQ, hasło/login"
+  },
+  {
+   "kind": "train-train",
+   "a": "47c3abda6fc5f6b6",
+   "a_label": "ham",
+   "b": "4e1136e8a7094c82",
+   "b_label": "ham",
+   "jaccard_5": 0.26,
+   "cosine_tfidf": 0.611,
+   "shared_urls": [],
+   "shared_link_keys": [],
+   "a_subject": "Subject: Re: why is decentralization worth worrying about?",
+   "b_subject": "Subject: why is decentralization worth worrying about?",
+   "decision": "thread",
+   "note": "ten sam wątek dyskusji"
+  },
+  {
+   "kind": "train-train",
+   "a": "fe959102cf3e0016",
+   "a_label": "spam",
+   "b": "42cfcf55774efb77",
+   "b_label": "spam",
+   "jaccard_5": 0.025,
+   "cosine_tfidf": 0.599,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "host:www.adclick.ws",
+    "seg:p.cfm"
+   ],
+   "a_subject": "Subject: Get the Child Support You Deserve                      10.124",
+   "b_subject": "Subject: [ILUG-Social] Claim Your $25 Kmart Gift Card",
+   "decision": "same_sender",
+   "note": "PrizeMama/adclick.ws, inne oferty"
+  },
+  {
+   "kind": "train-train",
+   "a": "dd1a9d4a8ab7afdb",
+   "a_label": "spam",
+   "b": "49b0a7de89983d47",
+   "b_label": "spam",
+   "jaccard_5": 0.355,
+   "cosine_tfidf": 0.596,
+   "shared_urls": [],
+   "shared_link_keys": [],
+   "a_subject": "Subject: Re: zzzz@spamassassin.taint.org",
+   "b_subject": "Subject: Fw: Re: Account For Cum Shots To: zzzz@spamassassin.taint.org OfferID: qxjx",
+   "decision": "copy",
+   "note": "kampania \"darmowe członkostwo adult\": ten sam szablon, FAQ, hasło/login"
+  },
+  {
+   "kind": "train-train",
+   "a": "6db9f789892cdf1b",
+   "a_label": "spam",
+   "b": "a7a8770bbb282a9d",
+   "b_label": "spam",
+   "jaccard_5": 0.06,
+   "cosine_tfidf": 0.522,
+   "shared_urls": [
+    "www.newnamedns.com/stopthemailplease/"
+   ],
+   "shared_link_keys": [
+    "host:www.newnamedns.com",
+    "seg:stopthemailplease"
+   ],
+   "a_subject": "Subject: ADV: Lowest life insurance rates available!                                                ",
+   "b_subject": "Subject: ADV: Interest rates slashed! Don't wait!                                                   ",
+   "decision": "same_sender",
+   "note": "seria \"ADV:\" z losowym znacznikiem w temacie i stopką stopthemailplease, inne oferty"
+  },
+  {
+   "kind": "train-train",
+   "a": "421078261ddc7dd6",
+   "a_label": "spam",
+   "b": "96aa3c148532df62",
+   "b_label": "spam",
+   "jaccard_5": 0.003,
+   "cosine_tfidf": 0.461,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "mail:bulkexpert@yahoo.com"
+   ],
+   "a_subject": "Subject: Never pay eBay listing fees again!",
+   "b_subject": "Subject: What Warren Buffett won't tell ya ...",
+   "decision": "same_sender",
+   "note": "ten sam adres wypisania bulkexpert@yahoo.com i format kodu, inna treść"
+  },
+  {
+   "kind": "train-train",
+   "a": "8e20017efd9adf45",
+   "a_label": "spam",
+   "b": "3395505c4e0c2420",
+   "b_label": "spam",
+   "jaccard_5": 0.053,
+   "cosine_tfidf": 0.406,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "mail:guaranteed4u@btamail.net.cn",
+    "mail:workinathome@btamail.net.cn"
+   ],
+   "a_subject": "Subject: Congratulations on Your 6 New Signups",
+   "b_subject": "Subject: Membership Status Notification",
+   "decision": "same_sender",
+   "note": "te same adresy btamail.net.cn, różne teksty MLM"
+  },
+  {
+   "kind": "train-train",
+   "a": "f28d3e8e4c360661",
+   "a_label": "spam",
+   "b": "6db9f789892cdf1b",
+   "b_label": "spam",
+   "jaccard_5": 0.051,
+   "cosine_tfidf": 0.198,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "seg:stopthemailplease"
+   ],
+   "a_subject": "Subject: ADV: Extended Auto Warranties Here vfafu",
+   "b_subject": "Subject: ADV: Lowest life insurance rates available!                                                ",
+   "decision": "same_sender",
+   "note": "seria \"ADV:\" z losowym znacznikiem w temacie i stopką stopthemailplease, inne oferty"
+  },
+  {
+   "kind": "train-train",
+   "a": "f28d3e8e4c360661",
+   "a_label": "spam",
+   "b": "a7a8770bbb282a9d",
+   "b_label": "spam",
+   "jaccard_5": 0.014,
+   "cosine_tfidf": 0.176,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "seg:stopthemailplease"
+   ],
+   "a_subject": "Subject: ADV: Extended Auto Warranties Here vfafu",
+   "b_subject": "Subject: ADV: Interest rates slashed! Don't wait!                                                   ",
+   "decision": "same_sender",
+   "note": "seria \"ADV:\" z losowym znacznikiem w temacie i stopką stopthemailplease, inne oferty"
+  },
+  {
+   "kind": "train-train",
+   "a": "538709913c367d14",
+   "a_label": "spam",
+   "b": "df3b67e11dfbf53c",
+   "b_label": "spam",
+   "jaccard_5": 0.006,
+   "cosine_tfidf": 0.166,
+   "shared_urls": [
+    "www.linux.ie/mailman/listinfo/ilug"
+   ],
+   "shared_link_keys": [
+    "host:www.centralremovalservice.com"
+   ],
+   "a_subject": "Subject: [ILUG] re: popular .BIZ and .COM extensions for only $14.95",
+   "b_subject": "Subject: [ILUG] Want to play poker with other people online.",
+   "decision": "same_sender",
+   "note": "wspólna usługa wypisania centralremovalservice.com i ten sam format kodu śledzącego, inny produkt"
+  },
+  {
+   "kind": "train-train",
+   "a": "538709913c367d14",
+   "a_label": "spam",
+   "b": "885f0773c263e57b",
+   "b_label": "spam",
+   "jaccard_5": 0.006,
+   "cosine_tfidf": 0.164,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "host:www.centralremovalservice.com"
+   ],
+   "a_subject": "Subject: [ILUG] re: popular .BIZ and .COM extensions for only $14.95",
+   "b_subject": "Subject: [ILUG-Social] Poker for money againts real players",
+   "decision": "same_sender",
+   "note": "wspólna usługa wypisania centralremovalservice.com i ten sam format kodu śledzącego, inny produkt"
+  },
+  {
+   "kind": "train-train",
+   "a": "df3b67e11dfbf53c",
+   "a_label": "spam",
+   "b": "7d7bd4edce7d8c3f",
+   "b_label": "spam",
+   "jaccard_5": 0.006,
+   "cosine_tfidf": 0.162,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "host:www.centralremovalservice.com"
+   ],
+   "a_subject": "Subject: [ILUG] Want to play poker with other people online.",
+   "b_subject": "Subject: $14.95 per year for .COM, .BIZ, and .INFO extensions",
+   "decision": "same_sender",
+   "note": "wspólna usługa wypisania centralremovalservice.com i ten sam format kodu śledzącego, inny produkt"
+  },
+  {
+   "kind": "train-train",
+   "a": "7d7bd4edce7d8c3f",
+   "a_label": "spam",
+   "b": "885f0773c263e57b",
+   "b_label": "spam",
+   "jaccard_5": 0.006,
+   "cosine_tfidf": 0.16,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "host:www.centralremovalservice.com"
+   ],
+   "a_subject": "Subject: $14.95 per year for .COM, .BIZ, and .INFO extensions",
+   "b_subject": "Subject: [ILUG-Social] Poker for money againts real players",
+   "decision": "same_sender",
+   "note": "wspólna usługa wypisania centralremovalservice.com i ten sam format kodu śledzącego, inny produkt"
+  },
+  {
+   "kind": "train-train",
+   "a": "885f0773c263e57b",
+   "a_label": "spam",
+   "b": "ff30b5937f313b80",
+   "b_label": "spam",
+   "jaccard_5": 0.006,
+   "cosine_tfidf": 0.16,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "host:www.centralremovalservice.com"
+   ],
+   "a_subject": "Subject: [ILUG-Social] Poker for money againts real players",
+   "b_subject": "Subject: $14.95 per year domain names",
+   "decision": "same_sender",
+   "note": "wspólna usługa wypisania centralremovalservice.com i ten sam format kodu śledzącego, inny produkt"
+  },
+  {
+   "kind": "train-train",
+   "a": "df3b67e11dfbf53c",
+   "a_label": "spam",
+   "b": "ff30b5937f313b80",
+   "b_label": "spam",
+   "jaccard_5": 0.006,
+   "cosine_tfidf": 0.157,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "host:www.centralremovalservice.com"
+   ],
+   "a_subject": "Subject: [ILUG] Want to play poker with other people online.",
+   "b_subject": "Subject: $14.95 per year domain names",
+   "decision": "same_sender",
+   "note": "wspólna usługa wypisania centralremovalservice.com i ten sam format kodu śledzącego, inny produkt"
+  },
+  {
+   "kind": "train-train",
+   "a": "6d8b3789ffad5343",
+   "a_label": "spam",
+   "b": "c7a4390cb674606c",
+   "b_label": "spam",
+   "jaccard_5": 0.0,
+   "cosine_tfidf": 0.084,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "host:202.101.163.34"
+   ],
+   "a_subject": "Subject: ^^^^^Cell Phone Belt Clips $1.95^^^^^^                           18070",
+   "b_subject": "Subject: [ILUG] ilug,Bigger, Fuller Breasts Naturally In Just Weeks",
+   "decision": "same_sender",
+   "note": "ten sam serwer 202.101.163.34:81, inny produkt (akcesoria GSM)"
+  },
+  {
+   "kind": "train-train",
+   "a": "6d8b3789ffad5343",
+   "a_label": "spam",
+   "b": "6aefbd0a04c67923",
+   "b_label": "spam",
+   "jaccard_5": 0.0,
+   "cosine_tfidf": 0.083,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "host:202.101.163.34"
+   ],
+   "a_subject": "Subject: ^^^^^Cell Phone Belt Clips $1.95^^^^^^                           18070",
+   "b_subject": "Subject: zzzz,Increase your breast size. 100% safe!",
+   "decision": "same_sender",
+   "note": "ten sam serwer 202.101.163.34:81, inny produkt (akcesoria GSM)"
+  },
+  {
+   "kind": "train-train",
+   "a": "6d8b3789ffad5343",
+   "a_label": "spam",
+   "b": "5d68e15980b474ac",
+   "b_label": "spam",
+   "jaccard_5": 0.0,
+   "cosine_tfidf": 0.082,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "host:202.101.163.34"
+   ],
+   "a_subject": "Subject: ^^^^^Cell Phone Belt Clips $1.95^^^^^^                           18070",
+   "b_subject": "Subject: zzzz,All New! Breast Enhancement",
+   "decision": "same_sender",
+   "note": "ten sam serwer 202.101.163.34:81, inny produkt (akcesoria GSM)"
+  },
+  {
+   "kind": "validation-train",
+   "a": "eec728149e9886d7",
+   "a_label": "spam",
+   "b": "0ed19e04c69885eb",
+   "b_label": "spam",
+   "jaccard_5": 0.922,
+   "cosine_tfidf": 0.995,
+   "shared_urls": [],
+   "shared_link_keys": [],
+   "a_subject": "Subject: [ILUG] Seeking Your Partnership",
+   "b_subject": "Subject: Seeking Your Partnership",
+   "decision": "copy",
+   "note": "ten sam list \"Seeking Your Partnership\""
+  },
+  {
+   "kind": "validation-train",
+   "a": "27bcc632c0a2fc78",
+   "a_label": "spam",
+   "b": "c69499c749040caa",
+   "b_label": "spam",
+   "jaccard_5": 0.938,
+   "cosine_tfidf": 0.977,
+   "shared_urls": [
+    "www.cheapsmoking.com/?ID=2"
+   ],
+   "shared_link_keys": [
+    "host:www.cheapsmoking.com"
+   ],
+   "a_subject": "Subject: Discount Smokes",
+   "b_subject": "Subject: Low Price Smokes",
+   "decision": "copy",
+   "note": "tanie papierosy, różnica jednego słowa i cyfry"
+  },
+  {
+   "kind": "validation-train",
+   "a": "8f6272eaef144851",
+   "a_label": "spam",
+   "b": "fe959102cf3e0016",
+   "b_label": "spam",
+   "jaccard_5": 0.4,
+   "cosine_tfidf": 0.944,
+   "shared_urls": [
+    "www.adclick.ws/p.cfm?o=245&s=pk002",
+    "www.adclick.ws/p.cfm?o=249&s=pk007",
+    "www.adclick.ws/p.cfm?o=259&s=pk007",
+    "www.adclick.ws/p.cfm?o=315&s=pk007",
+    "www.qves.com/trim/?zzzz@spamassassin.taint.org%7C17%7C308417"
+   ],
+   "shared_link_keys": [
+    "host:www.adclick.ws",
+    "host:www.qves.com",
+    "seg:p.cfm"
+   ],
+   "a_subject": "Subject: Guaranteed to lose 10-12 lbs in 30 days                          11.150",
+   "b_subject": "Subject: Get the Child Support You Deserve                      10.124",
+   "decision": "copy",
+   "note": "ta sama lista 5 ofert PrizeMama, te same linki, inna kolejność"
+  },
+  {
+   "kind": "validation-train",
+   "a": "5587807b85eebb8d",
+   "a_label": "spam",
+   "b": "78e10f85100979f1",
+   "b_label": "spam",
+   "jaccard_5": 0.883,
+   "cosine_tfidf": 0.942,
+   "shared_urls": [
+    "www.basetel.com/remove.html",
+    "www.basetel.com/wealthnow"
+   ],
+   "shared_link_keys": [
+    "host:www.basetel.com",
+    "seg:wealthnow"
+   ],
+   "a_subject": "Subject: FORTUNE 500 COMPANY HIRING, AT HOME REPS.",
+   "b_subject": "Subject: HELP WANTED.  WORK FROM HOME REPS.",
+   "decision": "copy",
+   "note": "praca w domu, ten sam tekst i linki"
+  },
+  {
+   "kind": "validation-train",
+   "a": "03d402d1641ab499",
+   "a_label": "spam",
+   "b": "1b5d3beaac72beba",
+   "b_label": "spam",
+   "jaccard_5": 0.587,
+   "cosine_tfidf": 0.938,
+   "shared_urls": [],
+   "shared_link_keys": [],
+   "a_subject": "Subject: [ILUG-Social] URGENT ASSISTANT NEEDED",
+   "b_subject": "Subject: A CRY FOR HELP",
+   "decision": "copy",
+   "note": "ten sam list z prośbą o pomoc (scam), inny temat"
+  },
+  {
+   "kind": "validation-train",
+   "a": "182f0590841142c4",
+   "a_label": "spam",
+   "b": "391f94cbf8814171",
+   "b_label": "spam",
+   "jaccard_5": 0.812,
+   "cosine_tfidf": 0.926,
+   "shared_urls": [
+    "channels.netscape.com/ns/browsers/download.jsp",
+    "webmail.netscape.com/"
+   ],
+   "shared_link_keys": [
+    "host:channels.netscape.com",
+    "host:webmail.netscape.com",
+    "seg:browsers",
+    "seg:download.jsp"
+   ],
+   "a_subject": "Subject: Don't get caught by rising interest rates.",
+   "b_subject": "Subject: You can gain from lowest interest rates in 30 years",
+   "decision": "copy",
+   "note": "stopy procentowe, ten sam tekst i linki"
+  },
+  {
+   "kind": "validation-train",
+   "a": "1e7b901a63477d06",
+   "a_label": "spam",
+   "b": "52c16dcd1605d5e8",
+   "b_label": "spam",
+   "jaccard_5": 0.099,
+   "cosine_tfidf": 0.7,
+   "shared_urls": [],
+   "shared_link_keys": [],
+   "a_subject": "Subject: ADV: Internet marketing & communications; earn $100k/year... uleio",
+   "b_subject": "Subject: [ILUG] Earn 100.000$ in one year working at home",
+   "decision": "different",
+   "note": "dwa różne listy MLM \"zarób $100k\""
+  },
+  {
+   "kind": "validation-train",
+   "a": "464580359acd5d49",
+   "a_label": "ham",
+   "b": "b59043f2a5fee3b3",
+   "b_label": "ham",
+   "jaccard_5": 0.323,
+   "cosine_tfidf": 0.696,
+   "shared_urls": [],
+   "shared_link_keys": [],
+   "a_subject": "Subject: Re: Secure Sofware Key",
+   "b_subject": "Subject: Re: Secure Sofware Key",
+   "decision": "thread",
+   "note": "ten sam wątek dyskusji"
+  },
+  {
+   "kind": "validation-train",
+   "a": "64bd31f3621b3fc4",
+   "a_label": "ham",
+   "b": "66bc1c813667c1a5",
+   "b_label": "ham",
+   "jaccard_5": 0.274,
+   "cosine_tfidf": 0.646,
+   "shared_urls": [],
+   "shared_link_keys": [],
+   "a_subject": "Subject: Re: A moment of silence for the First Amendment (fwd)",
+   "b_subject": "Subject: Re: A moment of silence for the First Amendment (fwd)",
+   "decision": "thread",
+   "note": "ten sam wątek dyskusji"
+  },
+  {
+   "kind": "validation-train",
+   "a": "8f6272eaef144851",
+   "a_label": "spam",
+   "b": "42cfcf55774efb77",
+   "b_label": "spam",
+   "jaccard_5": 0.025,
+   "cosine_tfidf": 0.62,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "host:www.adclick.ws",
+    "seg:p.cfm"
+   ],
+   "a_subject": "Subject: Guaranteed to lose 10-12 lbs in 30 days                          11.150",
+   "b_subject": "Subject: [ILUG-Social] Claim Your $25 Kmart Gift Card",
+   "decision": "same_sender",
+   "note": "PrizeMama/adclick.ws, inne oferty"
+  },
+  {
+   "kind": "validation-train",
+   "a": "916c72d37d37fe42",
+   "a_label": "ham",
+   "b": "3185f52f58845f1f",
+   "b_label": "ham",
+   "jaccard_5": 0.14,
+   "cosine_tfidf": 0.619,
+   "shared_urls": [
+    "lists.sourceforge.net/lists/listinfo/spamassassin-devel",
+    "thinkgeek.com/sf"
+   ],
+   "shared_link_keys": [
+    "host:www.hughes-family.org",
+    "seg:bugzilla"
+   ],
+   "a_subject": "Subject: [SAdev] [Bug 1006] Spamassassin's build process makes packaging    unnecessarily difficult",
+   "b_subject": "Subject: [SAdev] [Bug 813] add Bayesian spam filtering",
+   "decision": "thread",
+   "note": "powiadomienia Bugzilli SA, różne błędy"
+  },
+  {
+   "kind": "validation-train",
+   "a": "1c0c307bc78acb0d",
+   "a_label": "spam",
+   "b": "3d510681714a5bcf",
+   "b_label": "spam",
+   "jaccard_5": 0.042,
+   "cosine_tfidf": 0.61,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "seg:light",
+    "seg:user0201"
+   ],
+   "a_subject": "Subject: Let us find the right mortgage lender for you      AFPE",
+   "b_subject": "Subject: MSNBC: Rates Hit 35 year Low 4.75% ...12304",
+   "decision": "same_sender",
+   "note": "kredyty hipoteczne, ten sam identyfikator partnera user0201 i wspólne zdania, tekst przepisany"
+  },
+  {
+   "kind": "validation-train",
+   "a": "64329ea8627bc9d2",
+   "a_label": "spam",
+   "b": "6db9f789892cdf1b",
+   "b_label": "spam",
+   "jaccard_5": 0.096,
+   "cosine_tfidf": 0.377,
+   "shared_urls": [
+    "www.newnamedns.com/stopthemailplease/"
+   ],
+   "shared_link_keys": [
+    "host:www.newnamedns.com",
+    "seg:stopthemailplease"
+   ],
+   "a_subject": "Subject: ADV: Professional Teeth Whitening At Home!                                                 ",
+   "b_subject": "Subject: ADV: Lowest life insurance rates available!                                                ",
+   "decision": "same_sender",
+   "note": "seria \"ADV:\" z losowym znacznikiem w temacie i stopką stopthemailplease, inne oferty"
+  },
+  {
+   "kind": "validation-train",
+   "a": "64329ea8627bc9d2",
+   "a_label": "spam",
+   "b": "a7a8770bbb282a9d",
+   "b_label": "spam",
+   "jaccard_5": 0.044,
+   "cosine_tfidf": 0.33,
+   "shared_urls": [
+    "www.newnamedns.com/stopthemailplease/"
+   ],
+   "shared_link_keys": [
+    "host:www.newnamedns.com",
+    "seg:stopthemailplease"
+   ],
+   "a_subject": "Subject: ADV: Professional Teeth Whitening At Home!                                                 ",
+   "b_subject": "Subject: ADV: Interest rates slashed! Don't wait!                                                   ",
+   "decision": "same_sender",
+   "note": "seria \"ADV:\" z losowym znacznikiem w temacie i stopką stopthemailplease, inne oferty"
+  },
+  {
+   "kind": "validation-train",
+   "a": "64329ea8627bc9d2",
+   "a_label": "spam",
+   "b": "f28d3e8e4c360661",
+   "b_label": "spam",
+   "jaccard_5": 0.041,
+   "cosine_tfidf": 0.241,
+   "shared_urls": [],
+   "shared_link_keys": [
+    "seg:stopthemailplease"
+   ],
+   "a_subject": "Subject: ADV: Professional Teeth Whitening At Home!                                                 ",
+   "b_subject": "Subject: ADV: Extended Auto Warranties Here vfafu",
+   "decision": "same_sender",
+   "note": "seria \"ADV:\" z losowym znacznikiem w temacie i stopką stopthemailplease, inne oferty"
+  }
+ ]
+}

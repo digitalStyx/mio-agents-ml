@@ -1,0 +1,505 @@
+{
+ "evaluated": "2026-11-21T18:23:38+00:00",
+ "model": {
+  "model": "logreg",
+  "param": 1.0,
+  "threshold": 0.5095672028531834,
+  "positive_class": "spam",
+  "drop_tokens": [
+   "wrote",
+   "subj_re",
+   "date"
+  ],
+  "train_sha256": "c5d3e91e9ba758b8499bc825b34ce1f8f8392c31cb7205b3e3f3f122f51444e5",
+  "cleaning_version": "2",
+  "features": {
+   "subject_prefix": "subj_",
+   "token_pattern": "[a-z][a-z0-9]*(?:'[a-z]+)?|\\$",
+   "lowercase": true,
+   "min_df": 2,
+   "sublinear_tf": true,
+   "norm": "l2"
+  },
+  "created": "2026-11-21T18:23:06+00:00",
+  "versions": {
+   "python": "3.13.17",
+   "scikit-learn": "1.9.1",
+   "numpy": "2.5.5",
+   "scipy": "1.18.1",
+   "joblib": "1.6.0"
+  },
+  "cv": {
+   "tp": 55,
+   "fp": 1,
+   "n_spam": 60,
+   "n_ham": 120
+  }
+ },
+ "copies_excluded": [
+  "03d402d1641ab499",
+  "182f0590841142c4",
+  "27bcc632c0a2fc78",
+  "5587807b85eebb8d",
+  "8f6272eaef144851",
+  "eec728149e9886d7"
+ ],
+ "thread_hams": [
+  "464580359acd5d49",
+  "64bd31f3621b3fc4",
+  "916c72d37d37fe42"
+ ],
+ "full": {
+  "confusion": {
+   "tp": 19,
+   "fn": 1,
+   "fp": 0,
+   "tn": 40
+  },
+  "recall_spam": {
+   "k": 19,
+   "n": 20,
+   "value": 0.95,
+   "ci_low": 0.763868806553258,
+   "ci_high": 0.9911185511992047
+  },
+  "precision_spam": {
+   "k": 19,
+   "n": 19,
+   "value": 1.0,
+   "ci_low": 0.831820775947384,
+   "ci_high": 1.0
+  },
+  "false_positive_rate": {
+   "k": 0,
+   "n": 40,
+   "value": 0.0,
+   "ci_low": 0.0,
+   "ci_high": 0.0876216011972866
+  },
+  "accuracy": {
+   "k": 59,
+   "n": 60,
+   "value": 0.9833333333333333,
+   "ci_low": 0.9114487027240993,
+   "ci_high": 0.9970518402052136
+  },
+  "always_ham_accuracy": {
+   "k": 40,
+   "n": 60,
+   "value": 0.6666666666666666,
+   "ci_low": 0.5405686645211968,
+   "ci_high": 0.7727073847647731
+  }
+ },
+ "without_copies": {
+  "confusion": {
+   "tp": 13,
+   "fn": 1,
+   "fp": 0,
+   "tn": 40
+  },
+  "recall_spam": {
+   "k": 13,
+   "n": 14,
+   "value": 0.9285714285714286,
+   "ci_low": 0.6853129557584889,
+   "ci_high": 0.987277784752109
+  },
+  "precision_spam": {
+   "k": 13,
+   "n": 13,
+   "value": 1.0,
+   "ci_low": 0.7719046276458017,
+   "ci_high": 1.0
+  },
+  "false_positive_rate": {
+   "k": 0,
+   "n": 40,
+   "value": 0.0,
+   "ci_low": 0.0,
+   "ci_high": 0.0876216011972866
+  },
+  "accuracy": {
+   "k": 53,
+   "n": 54,
+   "value": 0.9814814814814815,
+   "ci_low": 0.9022856251121808,
+   "ci_high": 0.9967235122817709
+  },
+  "always_ham_accuracy": {
+   "k": 40,
+   "n": 54,
+   "value": 0.7407407407407407,
+   "ci_low": 0.6106910949571832,
+   "ci_high": 0.8388134737397926
+  }
+ },
+ "thread_hams_fp": 0,
+ "same_sender_spams": [
+  "1c0c307bc78acb0d",
+  "64329ea8627bc9d2"
+ ],
+ "same_sender_detected": 2,
+ "predictions": [
+  {
+   "message_id": "6c95b20ac24fd89d",
+   "label": "spam",
+   "p_spam": 0.6643734699865664,
+   "pred": "spam"
+  },
+  {
+   "message_id": "eec728149e9886d7",
+   "label": "spam",
+   "p_spam": 0.7781349187720803,
+   "pred": "spam"
+  },
+  {
+   "message_id": "00f2413a5421b49a",
+   "label": "ham",
+   "p_spam": 0.31796641246370205,
+   "pred": "ham"
+  },
+  {
+   "message_id": "b7bf0f1cfc0fa37f",
+   "label": "ham",
+   "p_spam": 0.3431205497382489,
+   "pred": "ham"
+  },
+  {
+   "message_id": "27bcc632c0a2fc78",
+   "label": "spam",
+   "p_spam": 0.6619638379788826,
+   "pred": "spam"
+  },
+  {
+   "message_id": "297db24ff3c83184",
+   "label": "ham",
+   "p_spam": 0.32874765447929954,
+   "pred": "ham"
+  },
+  {
+   "message_id": "c4721d1334c97072",
+   "label": "ham",
+   "p_spam": 0.34881182795240095,
+   "pred": "ham"
+  },
+  {
+   "message_id": "da32333482ad02f0",
+   "label": "spam",
+   "p_spam": 0.6570050841682847,
+   "pred": "spam"
+  },
+  {
+   "message_id": "cb970cfad4f1efe8",
+   "label": "ham",
+   "p_spam": 0.3315850642408781,
+   "pred": "ham"
+  },
+  {
+   "message_id": "ba3fcbfe651c263a",
+   "label": "ham",
+   "p_spam": 0.3532158237578347,
+   "pred": "ham"
+  },
+  {
+   "message_id": "017f0817d4c92951",
+   "label": "spam",
+   "p_spam": 0.4562335730267463,
+   "pred": "ham"
+  },
+  {
+   "message_id": "916c72d37d37fe42",
+   "label": "ham",
+   "p_spam": 0.37399581423216316,
+   "pred": "ham"
+  },
+  {
+   "message_id": "aae5b57adee6d7e8",
+   "label": "ham",
+   "p_spam": 0.3568905244910152,
+   "pred": "ham"
+  },
+  {
+   "message_id": "39bce1f5161e0cfc",
+   "label": "ham",
+   "p_spam": 0.3864059497311394,
+   "pred": "ham"
+  },
+  {
+   "message_id": "8f6272eaef144851",
+   "label": "spam",
+   "p_spam": 0.6719085284494587,
+   "pred": "spam"
+  },
+  {
+   "message_id": "2d5d89669551e7d0",
+   "label": "ham",
+   "p_spam": 0.3607308769494461,
+   "pred": "ham"
+  },
+  {
+   "message_id": "1ba8409dad130a90",
+   "label": "ham",
+   "p_spam": 0.2905300632794748,
+   "pred": "ham"
+  },
+  {
+   "message_id": "f1c5361fd9a7091c",
+   "label": "spam",
+   "p_spam": 0.6865264261446633,
+   "pred": "spam"
+  },
+  {
+   "message_id": "893beb9bebd4c74f",
+   "label": "ham",
+   "p_spam": 0.30822732069395975,
+   "pred": "ham"
+  },
+  {
+   "message_id": "f1584ab1b08779fc",
+   "label": "ham",
+   "p_spam": 0.3094323418570711,
+   "pred": "ham"
+  },
+  {
+   "message_id": "f5f92b21067f2281",
+   "label": "ham",
+   "p_spam": 0.27723625090546633,
+   "pred": "ham"
+  },
+  {
+   "message_id": "30bf1d45a9d62da3",
+   "label": "ham",
+   "p_spam": 0.3233293929075947,
+   "pred": "ham"
+  },
+  {
+   "message_id": "229ec2c1ab1a9a42",
+   "label": "spam",
+   "p_spam": 0.662295118197582,
+   "pred": "spam"
+  },
+  {
+   "message_id": "e31e74860d6dbdc2",
+   "label": "ham",
+   "p_spam": 0.33237355253584594,
+   "pred": "ham"
+  },
+  {
+   "message_id": "29aecdf1a25f62ed",
+   "label": "ham",
+   "p_spam": 0.27971261413487575,
+   "pred": "ham"
+  },
+  {
+   "message_id": "6673af9ec573528f",
+   "label": "ham",
+   "p_spam": 0.3248375305993444,
+   "pred": "ham"
+  },
+  {
+   "message_id": "51a14bcfee16b7c1",
+   "label": "ham",
+   "p_spam": 0.3128082759257114,
+   "pred": "ham"
+  },
+  {
+   "message_id": "182f0590841142c4",
+   "label": "spam",
+   "p_spam": 0.7450345543609448,
+   "pred": "spam"
+  },
+  {
+   "message_id": "464580359acd5d49",
+   "label": "ham",
+   "p_spam": 0.2934459825363745,
+   "pred": "ham"
+  },
+  {
+   "message_id": "a023b75ed00be9e1",
+   "label": "ham",
+   "p_spam": 0.3501954049770107,
+   "pred": "ham"
+  },
+  {
+   "message_id": "567d14f25684cee2",
+   "label": "ham",
+   "p_spam": 0.3389304078560095,
+   "pred": "ham"
+  },
+  {
+   "message_id": "04248c842ff97823",
+   "label": "ham",
+   "p_spam": 0.30498865979881534,
+   "pred": "ham"
+  },
+  {
+   "message_id": "1c0c307bc78acb0d",
+   "label": "spam",
+   "p_spam": 0.6867778349192243,
+   "pred": "spam"
+  },
+  {
+   "message_id": "d52481af2cae9d6f",
+   "label": "spam",
+   "p_spam": 0.5606027924851982,
+   "pred": "spam"
+  },
+  {
+   "message_id": "c8b94646b466d88f",
+   "label": "spam",
+   "p_spam": 0.5495760563327997,
+   "pred": "spam"
+  },
+  {
+   "message_id": "e8622ab1f5f53257",
+   "label": "spam",
+   "p_spam": 0.6793195313636349,
+   "pred": "spam"
+  },
+  {
+   "message_id": "1e7b901a63477d06",
+   "label": "spam",
+   "p_spam": 0.7317103203001794,
+   "pred": "spam"
+  },
+  {
+   "message_id": "1c5cc33de19b20c6",
+   "label": "ham",
+   "p_spam": 0.32704652718699306,
+   "pred": "ham"
+  },
+  {
+   "message_id": "102c6778e128a221",
+   "label": "spam",
+   "p_spam": 0.6996228482716056,
+   "pred": "spam"
+  },
+  {
+   "message_id": "f021d03849d7ccf5",
+   "label": "ham",
+   "p_spam": 0.2857040573491998,
+   "pred": "ham"
+  },
+  {
+   "message_id": "5587807b85eebb8d",
+   "label": "spam",
+   "p_spam": 0.6931100257763914,
+   "pred": "spam"
+  },
+  {
+   "message_id": "64354440892e20b3",
+   "label": "ham",
+   "p_spam": 0.30934230433995913,
+   "pred": "ham"
+  },
+  {
+   "message_id": "60d7370e52a9e12a",
+   "label": "ham",
+   "p_spam": 0.3054330107189704,
+   "pred": "ham"
+  },
+  {
+   "message_id": "c530b19035528ab8",
+   "label": "ham",
+   "p_spam": 0.3305000842029771,
+   "pred": "ham"
+  },
+  {
+   "message_id": "65037ebc4174db14",
+   "label": "ham",
+   "p_spam": 0.44740459509016306,
+   "pred": "ham"
+  },
+  {
+   "message_id": "cfcfe731b5b31881",
+   "label": "ham",
+   "p_spam": 0.3531777032510457,
+   "pred": "ham"
+  },
+  {
+   "message_id": "64329ea8627bc9d2",
+   "label": "spam",
+   "p_spam": 0.7336391480733488,
+   "pred": "spam"
+  },
+  {
+   "message_id": "1065919b68aa776c",
+   "label": "spam",
+   "p_spam": 0.6599227940623219,
+   "pred": "spam"
+  },
+  {
+   "message_id": "4848bd860e4e2f63",
+   "label": "ham",
+   "p_spam": 0.2889061059060399,
+   "pred": "ham"
+  },
+  {
+   "message_id": "332c061283fb119c",
+   "label": "ham",
+   "p_spam": 0.3910508235482197,
+   "pred": "ham"
+  },
+  {
+   "message_id": "fa5c6aa2c145311f",
+   "label": "ham",
+   "p_spam": 0.40757727124791376,
+   "pred": "ham"
+  },
+  {
+   "message_id": "18b1ae26914662c5",
+   "label": "ham",
+   "p_spam": 0.3450892452638227,
+   "pred": "ham"
+  },
+  {
+   "message_id": "da1c610cc4ff7c5d",
+   "label": "ham",
+   "p_spam": 0.32192020641106356,
+   "pred": "ham"
+  },
+  {
+   "message_id": "fa79f93147db2625",
+   "label": "ham",
+   "p_spam": 0.3755726903491726,
+   "pred": "ham"
+  },
+  {
+   "message_id": "dace7c7eeaf5eb4a",
+   "label": "ham",
+   "p_spam": 0.3091725199644787,
+   "pred": "ham"
+  },
+  {
+   "message_id": "e37aa29ae4267989",
+   "label": "spam",
+   "p_spam": 0.6962766343582343,
+   "pred": "spam"
+  },
+  {
+   "message_id": "03d402d1641ab499",
+   "label": "spam",
+   "p_spam": 0.658571111164327,
+   "pred": "spam"
+  },
+  {
+   "message_id": "cc7560c9a6972002",
+   "label": "ham",
+   "p_spam": 0.31365113544207224,
+   "pred": "ham"
+  },
+  {
+   "message_id": "34cde469d0c4292e",
+   "label": "ham",
+   "p_spam": 0.35129566375382565,
+   "pred": "ham"
+  },
+  {
+   "message_id": "64bd31f3621b3fc4",
+   "label": "ham",
+   "p_spam": 0.2913119869515317,
+   "pred": "ham"
+  }
+ ]
+}
