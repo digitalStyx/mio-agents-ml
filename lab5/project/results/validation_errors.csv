@@ -1,0 +1,5 @@
+image_id,label,predicted,second,margin_ovo,neighbors
+digit-542e2b56f1d7,4,6,1,0.5887,digit-93267a6a0b19:6;digit-58d71a3b8d06:6;digit-6afc54021e6a:6
+digit-09435dfabf79,1,9,3,0.3773,digit-372122e46205:9;digit-0101d5b50f84:3;digit-8293b12e405b:3
+digit-482b447dae2f,2,9,2,0.3109,digit-2b965ab69bb6:2;digit-ff1ee835aea0:9;digit-da32bad8fc6f:9
+digit-8f06f1bfc4f7,5,9,5,0.2893,digit-c2c3054421c0:5;digit-a8c0fb2c768a:5;digit-767a23957d53:9

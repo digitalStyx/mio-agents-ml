@@ -1,0 +1,4 @@
+image_id,label,predicted,second,margin_ovo,neighbors
+digit-09e2a05d6bd2,7,9,4,0.5784,digit-5ea2b6284a92:9;digit-cb8a1ed47b04:9;digit-e3f17d7f3f18:9
+digit-4c5c0534e4b8,3,9,2,0.0852,digit-8ff2eb9ed88b:8;digit-cbaca1691fd9:3;digit-eef9aea857ab:3
+digit-826cb4bf68f5,1,6,1,0.0289,digit-955c95de8e7c:1;digit-6408cbf7be58:6;digit-40795ec77ef8:6

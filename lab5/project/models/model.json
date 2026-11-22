@@ -1,0 +1,58 @@
+{
+  "model": "svm",
+  "estimator": "SVC",
+  "params": {
+    "C": 10,
+    "gamma": 0.3
+  },
+  "selection_reason": "SVM: kNN ma -3 trafień względem SVM na validation (przewaga kNN ≤ 2), zostaje podejście główne",
+  "best_svm": {
+    "C": 10,
+    "gamma": 0.3,
+    "correct": 196
+  },
+  "best_knn": {
+    "k": 3,
+    "weights": "uniform",
+    "correct": 193
+  },
+  "classes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "input": {
+    "format": "PNG",
+    "mode": "L",
+    "size": [
+      8,
+      8
+    ],
+    "features": "64 piksele wiersz po wierszu, wartość/255, bez standaryzacji"
+  },
+  "trained_on": {
+    "split": "train",
+    "n_images": 600,
+    "train_csv_sha256": "46e3031417ecaaebd6dd2ab80831bba33de48d2e89a41abfe7c7b5acddf120db"
+  },
+  "validation": {
+    "n_images": 200,
+    "correct": 196,
+    "accuracy": 0.98,
+    "validation_csv_sha256": "9f5930fab17f78d0ca5c733dbb7cbd21807a267c796662570c58b3fb7da4544a"
+  },
+  "versions": {
+    "python": "3.13.17",
+    "numpy": "2.5.5",
+    "scikit-learn": "1.9.1",
+    "pillow": "13.0.0"
+  },
+  "created_utc": "2026-11-22T09:43:23+00:00"
+}
